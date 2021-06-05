@@ -1,0 +1,19 @@
+apiVersion : apps/v1
+kind: Deployment
+metadata:
+  name: tkiranfirstdemoapp 
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tkiranfirstdemoapp
+  template:
+    metadata:
+      labels:
+        app: tkiranfirstdemoapp 
+    spec:
+      containers:
+        - name: tkiranfirstdemoapp 
+          image: acrkiran.azurecr.io/tkiranfirstdemoapp
+          ports:
+          - containerPort: 80
